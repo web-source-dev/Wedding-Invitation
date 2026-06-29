@@ -115,9 +115,36 @@
     <p style="font-family:'Jost',sans-serif;letter-spacing:.34em;font-size:10px;text-transform:uppercase;color:#9a7b33;margin:0">Your Hosts</p>
     <h2 style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:30px;margin:8px 0 0;color:#0E3A2E">Welcoming You on the Barat</h2>
     <p style="font-family:'Noto Nastaliq Urdu',serif;direction:rtl;font-size:18px;line-height:2.4;color:#BF9B49;margin:10px auto 0">بارات پر آپ کے منتظر</p>
-    <div style="display:flex;flex-direction:column;gap:7px;margin:28px auto 0;max-width:340px">
-      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:23px;color:#0E3A2E;margin:0">Mr. Manzoor Hussain (Bride's Father)</p>
-      <p style="font-family:'Cormorant Garamond',serif;font-size:20px;color:#3a4a40;margin:0">Muhammad Rizwan (Bride's Brother) &nbsp;·&nbsp; Muhammad Tayyab (Bride's Brother) &nbsp;·&nbsp; Muhammad Nouman (Bride's Brother)</p>
+    <div style="display:flex;flex-direction:column;gap:14px;margin:32px auto 0;max-width:360px;text-align:center">
+      <div style="background:#FBF7EC;border:1px solid rgba(191,155,73,.45);border-radius:3px;padding:22px 24px;box-shadow:0 6px 18px rgba(14,58,46,.06)">
+        <p style="font-family:'Jost',sans-serif;letter-spacing:.28em;font-size:9px;text-transform:uppercase;color:#9a7b33;margin:0">Parents</p>
+        <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:26px;line-height:1.25;color:#0E3A2E;margin:12px 0 0">Mr. &amp; Mrs. Manzoor Hussain</p>
+        <p style="font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#BF9B49;margin:5px 0 0">Bride's Parents</p>
+      </div>
+      <div style="background:#FBF7EC;border:1px solid rgba(191,155,73,.45);border-radius:3px;padding:22px 24px;box-shadow:0 6px 18px rgba(14,58,46,.06)">
+        <p style="font-family:'Jost',sans-serif;letter-spacing:.28em;font-size:9px;text-transform:uppercase;color:#9a7b33;margin:0">Brothers</p>
+        <div style="display:flex;flex-direction:column;gap:14px;margin-top:14px">
+          <div>
+            <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:22px;line-height:1.25;color:#0E3A2E;margin:0">Muhammad Rizwan</p>
+            <p style="font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#BF9B49;margin:4px 0 0">Bride's Brother</p>
+          </div>
+          <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(191,155,73,.25),transparent)"></div>
+          <div>
+            <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:22px;line-height:1.25;color:#0E3A2E;margin:0">Muhammad Tayyab</p>
+            <p style="font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#BF9B49;margin:4px 0 0">Bride's Brother</p>
+          </div>
+          <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(191,155,73,.25),transparent)"></div>
+          <div>
+            <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:22px;line-height:1.25;color:#0E3A2E;margin:0">Muhammad Nouman</p>
+            <p style="font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#BF9B49;margin:4px 0 0">Bride's Brother</p>
+          </div>
+        </div>
+      </div>
+      <div style="background:#FBF7EC;border:1px solid rgba(191,155,73,.45);border-radius:3px;padding:22px 24px;box-shadow:0 6px 18px rgba(14,58,46,.06)">
+        <p style="font-family:'Jost',sans-serif;letter-spacing:.28em;font-size:9px;text-transform:uppercase;color:#9a7b33;margin:0">Son-in-law</p>
+        <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:22px;line-height:1.25;color:#0E3A2E;margin:14px 0 0">Mr. &amp; Mrs. Muhammad Noman Asghar</p>
+        <p style="font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#BF9B49;margin:4px 0 0">Son in law</p>
+      </div>
     </div>
     <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:#3a4a40;margin:24px auto 0;max-width:320px">…together with the entire family, will be honoured to welcome you.</p>
   </section>
@@ -301,9 +328,9 @@ class Component extends DCLogic {
       'https://calendar.google.com/calendar/render?action=TEMPLATE&text=' + enc(text) +
       '&dates=' + ymd + '/' + ymdEnd + '&details=' + enc('Wedding of ' + couple);
     const events = [
-      { name:'Mehndi', ar:'مہندی', day:'Tuesday',   date:'7 August 2026', time:'Evening onwards', cal:gcal('Mehndi — '+couple,'20260807','20260808') },
-      { name:'Barat',  ar:'بارات', day:'Wednesday', date:'8 August 2026', time:'Evening onwards', cal:gcal('Barat — '+couple,'20260808','20260809') },
-      { name:'Valima', ar:'ولیمہ', day:'Thursday',  date:'9 August 2026', time:'Evening onwards', cal:gcal('Valima — '+couple,'20260809','20260810') },
+      { name:'Mehndi', ar:'مہندی', day:'Friday',   date:'7 August 2026', time:'Evening onwards', cal:gcal('Mehndi — '+couple,'20260807','20260808') },
+      { name:'Barat',  ar:'بارات', day:'Saturday', date:'8 August 2026', time:'Evening onwards', cal:gcal('Barat — '+couple,'20260808','20260809') },
+      { name:'Walima', ar:'ولیمہ', day:'Sunday',   date:'9 August 2026', time:'Evening onwards', cal:gcal('Valima — '+couple,'20260809','20260810') },
     ];
     return {
       open: () => this.open(),
