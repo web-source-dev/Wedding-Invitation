@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&amp;family=Jost:wght@300;400;500&amp;family=Amiri:ital@0;1&amp;family=Aref+Ruqaa:wght@400;700&amp;family=Noto+Nastaliq+Urdu:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:#0A2A21}
+  body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  a{color:inherit}
+  @keyframes shimmer{to{background-position:200% center}}
+  @keyframes pulseRing{0%{transform:scale(.92);opacity:.5}100%{transform:scale(2.5);opacity:0}}
+  @keyframes floatUp{0%,100%{transform:translateY(0);opacity:.75}50%{transform:translateY(-5px);opacity:1}}
+  @keyframes twinkle{0%,100%{opacity:.2}50%{opacity:.85}}
+  .cover-overlay{position:fixed;inset:0;z-index:50;cursor:pointer;user-select:none;background:radial-gradient(125% 90% at 50% 12%,#154838 0%,#0E3A2E 50%,#0A2A21 100%);transition:transform 1.05s cubic-bezier(.7,0,.18,1),opacity 1.05s ease;transform:translateY(0);opacity:1;pointer-events:auto;display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .cover-overlay.is-open{transform:translateY(-110%);opacity:0;pointer-events:none}
+  .cover-seal{position:relative;width:104px;height:104px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#F2E3AE,#BF9B49 55%,#9A7B33);box-shadow:0 8px 24px rgba(0,0,0,.4),inset 0 2px 6px rgba(255,255,255,.45),inset 0 -6px 14px rgba(0,0,0,.28);display:flex;align-items:center;justify-content:center;border:2px solid rgba(154,123,51,.6);transition:transform .85s ease,opacity .85s ease;transform:scale(1);opacity:1}
+  .cover-seal.is-open{transform:scale(2.6) rotate(6deg);opacity:0}
+</style>
+</helmet>
+
+<div style="max-width:480px;margin:0 auto;background:#F4EEDF;min-height:100vh;position:relative;box-shadow:0 0 70px rgba(0,0,0,.45);overflow:hidden;color:#1f3a30">
+
+  <!-- HERO -->
+  <section style="position:relative;background:radial-gradient(125% 80% at 50% 0%,#154838 0%,#0E3A2E 55%,#0A2A21 100%);color:#EFE6CE;padding:60px 26px 54px;text-align:center;overflow:hidden">
+    <div style="position:absolute;inset:0;opacity:.06;background-image:radial-gradient(circle,#D9C07A 1px,transparent 1.4px);background-size:22px 22px;pointer-events:none"></div>
+    <div style="position:absolute;inset:13px;border:1px solid rgba(191,155,73,.45);pointer-events:none"></div>
+    <div style="position:absolute;inset:18px;border:1px solid rgba(191,155,73,.2);pointer-events:none"></div>
+    <div style="position:relative">
+      <div style="font-family:'Amiri',serif;font-size:clamp(15px,5vw,26px);color:#D9C07A;line-height:1.3;width:100%;max-width:100%;white-space:nowrap">﷽</div>
+      <p style="font-family:'Jost',sans-serif;letter-spacing:.36em;font-size:10px;text-transform:uppercase;color:rgba(217,192,122,.82);margin:20px 0 0">In the name of Allah, the Most Gracious</p>
+      <div style="display:flex;align-items:center;justify-content:center;gap:14px;margin:28px auto 0;width:min(280px,72%)"><span style="height:1px;flex:1;background:linear-gradient(90deg,transparent,#BF9B49)"></span><span style="width:7px;height:7px;background:#BF9B49;transform:rotate(45deg)"></span><span style="height:1px;flex:1;background:linear-gradient(90deg,#BF9B49,transparent)"></span></div>
+      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:rgba(239,230,206,.9);margin:26px 0 0">We joyfully invite you to the wedding of</p>
+      <div style="margin:18px 0 0">
+        <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:clamp(34px,12vw,46px);line-height:1.04;overflow-wrap:break-word;background:linear-gradient(100deg,#BF9B49,#F2E3AE 45%,#BF9B49);-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% auto;animation:shimmer 7s linear infinite">Abdul Rehman</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:28px;color:#D9C07A;margin:4px 0;opacity:.85">&amp;</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:clamp(34px,12vw,46px);line-height:1.04;overflow-wrap:break-word;background:linear-gradient(100deg,#BF9B49,#F2E3AE 45%,#BF9B49);-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% auto;animation:shimmer 7s linear infinite">Muqaddas</div>
+        <div style="font-family:'Aref Ruqaa',serif;font-size:21px;color:rgba(217,192,122,.85);margin-top:14px;direction:rtl">عبد الرحمٰن &nbsp;و&nbsp; مقدّس</div>
+      </div>
+      <p style="font-family:'Jost',sans-serif;letter-spacing:.32em;font-size:12px;color:rgba(239,230,206,.85);margin-top:22px">07 &nbsp;·&nbsp; 08 &nbsp;·&nbsp; 09 &nbsp; AUGUST &nbsp; 2026</p>
+    </div>
+  </section>
+
+  <!-- INVITATION & VERSE -->
+  <section style="position:relative;background:#F4EEDF;padding:54px 30px;text-align:center">
+    <p style="font-family:'Jost',sans-serif;letter-spacing:.34em;font-size:10px;text-transform:uppercase;color:#9a7b33;margin:0">A Warm Invitation</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;line-height:1.6;color:#3a4a40;margin:20px auto 0;max-width:360px">With hearts full of gratitude to Allah, we warmly invite you and your loved ones to share in our joy. Your presence and prayers would make our happiness complete.</p>
+    <p style="font-family:'Noto Nastaliq Urdu',serif;direction:rtl;font-size:17px;line-height:2.6;color:#0E3A2E;margin:22px auto 0;max-width:360px">اللہ کے حضور تشکر کے ساتھ، ہم آپ کو اور آپ کے پیاروں کو اپنی خوشیوں میں شریک ہونے کی دل سے دعوت دیتے ہیں۔ آپ کی موجودگی اور دعائیں ہماری خوشی کو مکمل کر دیں گی۔</p>
+    <div style="display:flex;align-items:center;justify-content:center;gap:14px;margin:34px auto 0;width:min(240px,70%)"><span style="height:1px;flex:1;background:linear-gradient(90deg,transparent,#BF9B49)"></span><span style="width:6px;height:6px;background:#BF9B49;transform:rotate(45deg)"></span><span style="height:1px;flex:1;background:linear-gradient(90deg,#BF9B49,transparent)"></span></div>
+    <p style="font-family:'Jost',sans-serif;letter-spacing:.34em;font-size:10px;text-transform:uppercase;color:#9a7b33;margin:34px 0 0">And among His Signs</p>
+    <p style="font-family:'Amiri',serif;direction:rtl;font-size:25px;line-height:1.95;color:#0E3A2E;margin:24px auto 0;max-width:380px">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;line-height:1.6;color:#3a4a40;margin:24px auto 0;max-width:340px">“And among His signs is that He created for you mates from among yourselves, that you may find tranquillity in them; and He placed between you affection and mercy.”</p>
+    <p style="font-family:'Noto Nastaliq Urdu',serif;direction:rtl;font-size:16px;line-height:2.6;color:#3a4a40;margin:22px auto 0;max-width:360px">اور اُس کی نشانیوں میں سے یہ بھی ہے کہ اُس نے تمہارے لیے تمہی میں سے جوڑے بنائے تاکہ تم اُن سے سکون پاؤ، اور تمہارے درمیان محبت اور رحمت پیدا کر دی۔</p>
+    <p style="font-family:'Jost',sans-serif;letter-spacing:.22em;font-size:10px;text-transform:uppercase;color:#BF9B49;margin:18px 0 0">Surah Ar-Rum · 30:21</p>
+  </section>
+
+  <!-- COUNTDOWN -->
+  <sc-if value="{{ showCountdown }}" hint-placeholder-val="{{ true }}">
+  <section style="position:relative;background:radial-gradient(120% 90% at 50% 0%,#154838,#0E3A2E 70%);color:#EFE6CE;padding:52px 26px;text-align:center;overflow:hidden">
+    <div style="position:absolute;inset:0;opacity:.05;background-image:radial-gradient(circle,#D9C07A 1px,transparent 1.4px);background-size:22px 22px;pointer-events:none"></div>
+    <div style="position:relative">
+      <p style="font-family:'Jost',sans-serif;letter-spacing:.34em;font-size:10px;text-transform:uppercase;color:rgba(217,192,122,.82);margin:0">Counting down to the Barat</p>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:30px;margin:10px 0 0;color:#F2E3AE">8th of August, 2026</h2>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:9px;max-width:330px;margin:30px auto 0">
+        <div style="border:1px solid rgba(191,155,73,.4);background:rgba(217,192,122,.06);padding:15px 4px;border-radius:2px"><div style="font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:600;color:#F2E3AE;line-height:1">{{ cd.d }}</div><div style="font-family:'Jost',sans-serif;letter-spacing:.16em;font-size:9px;text-transform:uppercase;color:rgba(239,230,206,.7);margin-top:6px">Days</div></div>
+        <div style="border:1px solid rgba(191,155,73,.4);background:rgba(217,192,122,.06);padding:15px 4px;border-radius:2px"><div style="font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:600;color:#F2E3AE;line-height:1">{{ cd.h }}</div><div style="font-family:'Jost',sans-serif;letter-spacing:.16em;font-size:9px;text-transform:uppercase;color:rgba(239,230,206,.7);margin-top:6px">Hours</div></div>
+        <div style="border:1px solid rgba(191,155,73,.4);background:rgba(217,192,122,.06);padding:15px 4px;border-radius:2px"><div style="font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:600;color:#F2E3AE;line-height:1">{{ cd.m }}</div><div style="font-family:'Jost',sans-serif;letter-spacing:.16em;font-size:9px;text-transform:uppercase;color:rgba(239,230,206,.7);margin-top:6px">Minutes</div></div>
+        <div style="border:1px solid rgba(191,155,73,.4);background:rgba(217,192,122,.06);padding:15px 4px;border-radius:2px"><div style="font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:600;color:#F2E3AE;line-height:1">{{ cd.s }}</div><div style="font-family:'Jost',sans-serif;letter-spacing:.16em;font-size:9px;text-transform:uppercase;color:rgba(239,230,206,.7);margin-top:6px">Seconds</div></div>
+      </div>
+    </div>
+  </section>
+  </sc-if>
+
+  <!-- EVENTS -->
+  <section style="background:#F4EEDF;padding:54px 26px">
+    <p style="font-family:'Jost',sans-serif;letter-spacing:.34em;font-size:10px;text-transform:uppercase;color:#9a7b33;margin:0;text-align:center">The Celebrations</p>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:32px;margin:8px 0 0;color:#0E3A2E;text-align:center">Wedding Festivities</h2>
+    <div style="display:flex;flex-direction:column;gap:16px;margin:32px auto 0;max-width:380px">
+      <sc-for list="{{ events }}" as="ev" hint-placeholder-count="3">
+        <div style="position:relative;background:#FBF7EC;border:1px solid rgba(191,155,73,.5);border-radius:3px;padding:20px 22px;box-shadow:0 6px 18px rgba(14,58,46,.07)">
+          <div style="position:absolute;left:0;top:14px;bottom:14px;width:3px;background:linear-gradient(#BF9B49,#E9D9A0)"></div>
+          <div style="display:flex;align-items:baseline;justify-content:space-between">
+            <h3 style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:28px;margin:0;color:#0E3A2E">{{ ev.name }}</h3>
+            <span style="font-family:'Aref Ruqaa',serif;font-size:18px;color:#BF9B49">{{ ev.ar }}</span>
+          </div>
+          <p style="font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.04em;color:#3a4a40;margin:8px 0 0">{{ ev.day }} &nbsp;·&nbsp; {{ ev.date }}</p>
+          <p style="font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#9a7b33;margin:3px 0 0">{{ ev.time }}</p>
+          <a href="{{ ev.cal }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;margin-top:14px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#0E3A2E;text-decoration:none;border-bottom:1px solid #BF9B49;padding-bottom:3px"><span style="font-size:15px;line-height:1;color:#BF9B49">+</span> Add to calendar</a>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- VENUE -->
+  <section style="position:relative;background:radial-gradient(120% 90% at 50% 100%,#154838,#0E3A2E 70%);color:#EFE6CE;padding:54px 30px;text-align:center;overflow:hidden">
+    <div style="position:absolute;inset:0;opacity:.05;background-image:radial-gradient(circle,#D9C07A 1px,transparent 1.4px);background-size:22px 22px;pointer-events:none"></div>
+    <div style="position:relative">
+      <p style="font-family:'Jost',sans-serif;letter-spacing:.34em;font-size:10px;text-transform:uppercase;color:rgba(217,192,122,.82);margin:0">The Venue</p>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:32px;margin:10px 0 0;color:#F2E3AE">Alhabib Marquee Gojra</h2>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:18px;line-height:1.5;color:rgba(239,230,206,.9);margin:10px auto 0;max-width:300px">Mongi Bangla Rd, Gojra</p>
+      <a href="{{ mapsUrl }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:9px;margin-top:26px;padding:13px 28px;border:1px solid #BF9B49;border-radius:2px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#F2E3AE;text-decoration:none"><span style="width:7px;height:7px;background:#BF9B49;transform:rotate(45deg)"></span> View Location</a>
+    </div>
+  </section>
+
+  <!-- HOSTS / RECEPTION -->
+  <section style="background:#F4EEDF;padding:54px 30px 56px;text-align:center;border-top:1px solid rgba(191,155,73,.25)">
+    <p style="font-family:'Jost',sans-serif;letter-spacing:.34em;font-size:10px;text-transform:uppercase;color:#9a7b33;margin:0">Your Hosts</p>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:30px;margin:8px 0 0;color:#0E3A2E">Welcoming You on the Barat</h2>
+    <p style="font-family:'Noto Nastaliq Urdu',serif;direction:rtl;font-size:18px;line-height:2.4;color:#BF9B49;margin:10px auto 0">بارات پر آپ کے منتظر</p>
+    <div style="display:flex;flex-direction:column;gap:7px;margin:28px auto 0;max-width:340px">
+      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:23px;color:#0E3A2E;margin:0">Mr. Manzoor Hussain (Bride's Father)</p>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:20px;color:#3a4a40;margin:0">Muhammad Rizwan (Bride's Brother) &nbsp;·&nbsp; Muhammad Tayyab (Bride's Brother) &nbsp;·&nbsp; Muhammad Nouman (Bride's Brother)</p>
+    </div>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:#3a4a40;margin:24px auto 0;max-width:320px">…together with the entire family, will be honoured to welcome you.</p>
+  </section>
+
+  <!-- CLOSING -->
+  <section style="background:#F4EEDF;padding:58px 30px 64px;text-align:center">
+    <div style="position:relative;width:96px;height:96px;margin:0 auto;border-radius:50%;background:radial-gradient(circle at 35% 30%,#154838,#0E3A2E);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 22px rgba(14,58,46,.25);border:2px solid #BF9B49">
+      <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:30px;color:#E9D9A0">A<span style="font-size:18px;opacity:.7">&amp;</span>M</div>
+    </div>
+    <p style="font-family:'Amiri',serif;direction:rtl;font-size:24px;color:#0E3A2E;margin:30px 0 0">بَارَكَ اللّٰهُ لَكُمَا وَبَارَكَ عَلَيْكُمَا</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:#3a4a40;margin:14px auto 0;max-width:320px">May Allah bless this union and shower His mercy upon you both.</p>
+    <p style="font-family:'Noto Nastaliq Urdu',serif;direction:rtl;font-size:17px;line-height:2.5;color:#0E3A2E;margin:18px auto 0;max-width:340px">اللہ تعالیٰ اس رشتے میں برکت عطا فرمائے اور آپ دونوں پر اپنی رحمتوں کی بارش کرے۔</p>
+    <div style="display:flex;align-items:center;justify-content:center;gap:14px;margin:28px auto 0;width:min(240px,70%)"><span style="height:1px;flex:1;background:linear-gradient(90deg,transparent,#BF9B49)"></span><span style="width:6px;height:6px;background:#BF9B49;transform:rotate(45deg)"></span><span style="height:1px;flex:1;background:linear-gradient(90deg,#BF9B49,transparent)"></span></div>
+    <p style="font-family:'Jost',sans-serif;letter-spacing:.26em;font-size:10px;text-transform:uppercase;color:#9a7b33;margin:24px 0 0">Together with their families</p>
+  </section>
+
+</div>
+
+<!-- COVER -->
+<div onClick="{{ open }}" class="{{ coverClass }}">
+  <div style="position:absolute;inset:0;opacity:.06;background-image:radial-gradient(circle,#D9C07A 1px,transparent 1.4px);background-size:22px 22px"></div>
+  <div style="position:relative;width:min(440px,100%);height:100%;max-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:48px 32px">
+    <div style="position:absolute;inset:18px;border:1px solid rgba(191,155,73,.45)"></div>
+    <div style="position:absolute;inset:24px;border:1px solid rgba(191,155,73,.18)"></div>
+    <div style="font-family:'Amiri',serif;font-size:clamp(15px,5vw,26px);color:#D9C07A;line-height:1.3;max-width:100%;white-space:nowrap">﷽</div>
+    <p style="font-family:'Jost',sans-serif;letter-spacing:.4em;font-size:10px;text-transform:uppercase;color:rgba(217,192,122,.82);margin:26px 0 0">The Wedding Of</p>
+    <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:clamp(30px,11vw,42px);line-height:1.1;margin-top:14px;overflow-wrap:break-word;background:linear-gradient(100deg,#BF9B49,#F2E3AE 45%,#BF9B49);-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% auto;animation:shimmer 7s linear infinite">Abdul Rehman<br><span style="font-size:24px;color:#D9C07A;-webkit-text-fill-color:#D9C07A">&amp;</span><br>Muqaddas</div>
+    <div style="font-family:'Aref Ruqaa',serif;font-size:19px;color:rgba(217,192,122,.85);margin-top:14px;direction:rtl">عبد الرحمٰن &nbsp;و&nbsp; مقدّس</div>
+    <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin:26px auto 0;width:min(220px,60%)"><span style="height:1px;flex:1;background:linear-gradient(90deg,transparent,#BF9B49)"></span><span style="width:6px;height:6px;background:#BF9B49;transform:rotate(45deg)"></span><span style="height:1px;flex:1;background:linear-gradient(90deg,#BF9B49,transparent)"></span></div>
+    <p style="font-family:'Jost',sans-serif;letter-spacing:.3em;font-size:11px;color:rgba(239,230,206,.82);margin:18px 0 36px">AUGUST · 2026</p>
+    <div style="position:relative;width:104px;height:104px;margin:0 auto">
+      <span style="position:absolute;inset:0;border-radius:50%;border:1px solid rgba(217,192,122,.55);animation:pulseRing 2.8s ease-out infinite"></span>
+      <span style="position:absolute;inset:0;border-radius:50%;border:1px solid rgba(217,192,122,.55);animation:pulseRing 2.8s ease-out infinite 1.4s"></span>
+      <div class="{{ sealClass }}">
+        <div style="font-family:'Cormorant Garamond',serif;font-style:italic;color:#3a2c0e;font-size:32px;font-weight:600;text-shadow:0 1px 0 rgba(255,255,255,.4)">A<span style="font-size:19px;opacity:.7">&amp;</span>M</div>
+      </div>
+    </div>
+    <p style="font-family:'Jost',sans-serif;letter-spacing:.32em;font-size:11px;text-transform:uppercase;color:rgba(217,192,122,.9);margin-top:22px;animation:floatUp 2.4s ease-in-out infinite">Tap to open</p>
+  </div>
+</div>
+
+<!-- MUSIC TOGGLE -->
+<button onClick="{{ toggleMusic }}" aria-label="Toggle music" style="position:fixed;bottom:18px;right:18px;z-index:60;width:48px;height:48px;border-radius:50%;border:1px solid rgba(191,155,73,.7);background:radial-gradient(circle at 35% 30%,#154838,#0E3A2E);color:#E9D9A0;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.3)">
+  <sc-if value="{{ musicOn }}" hint-placeholder-val="{{ true }}">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"></path><path d="M16 8.5a4 4 0 0 1 0 7"></path><path d="M18.7 6a7 7 0 0 1 0 12"></path></svg>
+  </sc-if>
+  <sc-if value="{{ musicOff }}" hint-placeholder-val="{{ false }}">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"></path><path d="M15.5 9.5l5 5"></path><path d="M20.5 9.5l-5 5"></path></svg>
+  </sc-if>
+</button>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:420,&quot;height&quot;:880},&quot;autoPlayMusic&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Behavior&quot;},&quot;showCountdown&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Behavior&quot;}}">
+class Component extends DCLogic {
+  state = { opened:false, musicOn:false, cd:{d:'--',h:'--',m:'--',s:'--'} };
+
+  componentDidMount(){
+    document.body.style.overflow = 'hidden';
+    this.tickCountdown();
+    this.cdTimer = setInterval(()=>this.tickCountdown(), 1000);
+  }
+  componentWillUnmount(){
+    clearInterval(this.cdTimer);
+    clearTimeout(this.audioTimer);
+    if(this.ctx){ try{ this.ctx.close(); }catch(e){} }
+    document.body.style.overflow = '';
+  }
+
+  tickCountdown(){
+    const target = new Date(2026,7,8,16,0,0).getTime();
+    let diff = Math.max(0, target - Date.now());
+    const d = Math.floor(diff/86400000); diff -= d*86400000;
+    const h = Math.floor(diff/3600000); diff -= h*3600000;
+    const m = Math.floor(diff/60000); diff -= m*60000;
+    const s = Math.floor(diff/1000);
+    const p = n => String(n).padStart(2,'0');
+    this.setState({ cd:{ d:String(d), h:p(h), m:p(m), s:p(s) } });
+  }
+
+  open(){
+    if(this.state.opened) return;
+    this.setState({ opened:true });
+    document.body.style.overflow = '';
+    if(this.props.autoPlayMusic ?? true){
+      this.startAudio();
+      this.setState({ musicOn:true });
+    }
+  }
+
+  // ---- ambient audio (generative, no external assets) ----
+  makeImpulse(ctx, dur, decay){
+    const rate = ctx.sampleRate, len = Math.floor(rate*dur);
+    const buf = ctx.createBuffer(2, len, rate);
+    for(let c=0;c<2;c++){
+      const d = buf.getChannelData(c);
+      for(let i=0;i<len;i++){ d[i] = (Math.random()*2-1) * Math.pow(1 - i/len, decay); }
+    }
+    return buf;
+  }
+  playNote(freq, time, dur, vol){
+    if(!this.ctx) return;
+    vol = vol || 0.4;
+    const o = this.ctx.createOscillator();
+    o.type = 'triangle'; o.frequency.value = freq; o.detune.value = (Math.random()*6-3);
+    const o2 = this.ctx.createOscillator();
+    o2.type = 'sine'; o2.frequency.value = freq*2;
+    const g = this.ctx.createGain(), g2 = this.ctx.createGain();
+    g.gain.setValueAtTime(0, time);
+    g.gain.linearRampToValueAtTime(vol, time+0.02);
+    g.gain.exponentialRampToValueAtTime(0.0008, time+dur);
+    g2.gain.setValueAtTime(0, time);
+    g2.gain.linearRampToValueAtTime(vol*0.28, time+0.02);
+    g2.gain.exponentialRampToValueAtTime(0.0008, time+dur*0.7);
+    o.connect(g).connect(this.master);
+    o2.connect(g2).connect(this.master);
+    o.start(time); o.stop(time+dur+0.1);
+    o2.start(time); o2.stop(time+dur+0.1);
+  }
+  startAudio(){
+    if(this.audioStarted){ this.resumeAudio(); return; }
+    try{
+      const AC = window.AudioContext || window.webkitAudioContext;
+      if(!AC) return;
+      const ctx = new AC(); this.ctx = ctx;
+      if(ctx.state === 'suspended') ctx.resume();
+      const master = ctx.createGain(); master.gain.value = 0; this.master = master;
+      const lp = ctx.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 2600;
+      const conv = ctx.createConvolver(); conv.buffer = this.makeImpulse(ctx, 2.8, 2.4);
+      const wet = ctx.createGain(); wet.gain.value = 0.55;
+      const dry = ctx.createGain(); dry.gain.value = 0.75;
+      master.connect(lp);
+      lp.connect(dry).connect(ctx.destination);
+      lp.connect(conv); conv.connect(wet).connect(ctx.destination);
+      master.gain.linearRampToValueAtTime(0.17, ctx.currentTime+3.5);
+      this.melody = [392.00,523.25,659.25,523.25,440.00,392.00,329.63,392.00,293.66,349.23,440.00,523.25];
+      this.step = 0.7; this.mi = 0; this.paused = false;
+      this.nextTime = ctx.currentTime + 0.3;
+      this.audioStarted = true;
+      this.tick();
+    }catch(e){}
+  }
+  tick(){
+    if(!this.ctx || this.paused) return;
+    const ahead = 0.6;
+    while(this.nextTime < this.ctx.currentTime + ahead){
+      const f = this.melody[this.mi % this.melody.length];
+      this.playNote(f, this.nextTime, 1.9, 0.4);
+      if(this.mi % 4 === 0) this.playNote(f/2, this.nextTime, 2.8, 0.2);
+      this.mi++;
+      this.nextTime += this.step * (this.mi % 8 === 0 ? 1.7 : 1);
+    }
+    this.audioTimer = setTimeout(()=>this.tick(), 120);
+  }
+  resumeAudio(){
+    if(!this.ctx) return;
+    if(this.ctx.state === 'suspended') this.ctx.resume();
+    this.paused = false;
+    this.master.gain.cancelScheduledValues(this.ctx.currentTime);
+    this.master.gain.linearRampToValueAtTime(0.17, this.ctx.currentTime+1.2);
+    this.nextTime = this.ctx.currentTime + 0.1;
+    this.tick();
+  }
+  pauseAudio(){
+    this.paused = true;
+    if(this.master){
+      this.master.gain.cancelScheduledValues(this.ctx.currentTime);
+      this.master.gain.linearRampToValueAtTime(0.0001, this.ctx.currentTime+0.6);
+    }
+    clearTimeout(this.audioTimer);
+  }
+  toggleMusic(){
+    if(!this.audioStarted){ this.startAudio(); this.setState({ musicOn:true }); return; }
+    if(this.paused){ this.resumeAudio(); this.setState({ musicOn:true }); }
+    else { this.pauseAudio(); this.setState({ musicOn:false }); }
+  }
+
+  renderVals(){
+    const o = this.state.opened;
+    const enc = encodeURIComponent;
+    const couple = 'Abdul Rehman & Muqaddas';
+    const gcal = (text, ymd, ymdEnd) =>
+      'https://calendar.google.com/calendar/render?action=TEMPLATE&text=' + enc(text) +
+      '&dates=' + ymd + '/' + ymdEnd + '&details=' + enc('Wedding of ' + couple);
+    const events = [
+      { name:'Mehndi', ar:'مہندی', day:'Tuesday',   date:'7 August 2026', time:'Evening onwards', cal:gcal('Mehndi — '+couple,'20260807','20260808') },
+      { name:'Barat',  ar:'بارات', day:'Wednesday', date:'8 August 2026', time:'Evening onwards', cal:gcal('Barat — '+couple,'20260808','20260809') },
+      { name:'Valima', ar:'ولیمہ', day:'Thursday',  date:'9 August 2026', time:'Evening onwards', cal:gcal('Valima — '+couple,'20260809','20260810') },
+    ];
+    return {
+      open: () => this.open(),
+      toggleMusic: () => this.toggleMusic(),
+      musicOn: this.state.musicOn,
+      musicOff: !this.state.musicOn,
+      coverClass: 'cover-overlay' + (o ? ' is-open' : ''),
+      sealClass: 'cover-seal' + (o ? ' is-open' : ''),
+      cd: this.state.cd,
+      events,
+      showCountdown: this.props.showCountdown ?? true,
+      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=' + enc('Alhabib Marquee Gojra, Mongi Bangla Rd, Gojra, 76120, Pakistan'),
+    };
+  }
+}
+</script>
+</body>
+</html>
